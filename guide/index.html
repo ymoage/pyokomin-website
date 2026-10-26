@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ガイド - Pyokomin</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.8;
+      color: #333;
+      background: #f5f5f5;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2rem;
+    }
+    main {
+      background: white;
+      padding: 40px;
+      margin-top: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #667eea;
+      margin-top: 30px;
+      margin-bottom: 15px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #eee;
+    }
+    h2:first-child {
+      margin-top: 0;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+    ul, ol {
+      margin-left: 20px;
+      margin-bottom: 15px;
+    }
+    li {
+      margin-bottom: 8px;
+    }
+    li ul {
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+    code {
+      font-family: Consolas, 'Courier New', monospace;
+      background: #f0f0f5;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+      word-break: break-all;
+      user-select: all;
+    }
+    .table-wrap {
+      overflow-x: auto;
+      margin-bottom: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      text-align: left;
+      vertical-align: top;
+      padding: 10px 12px;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      background: #f7f7fb;
+      color: #555;
+    }
+    main a {
+      color: #667eea;
+    }
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #666;
+    }
+    footer a {
+      color: #667eea;
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      main {
+        padding: 24px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pyokomin ガイド</h1>
+  </header>
+
+  <div class="container">
+    <main>
+      <p>Pyokomin は、YouTube ライブのチャットをレーンに分けて読むための Windows アプリです。いまはベータ版です。</p>
+
+      <h2>動作環境</h2>
+      <ul>
+        <li>Windows 11（64 ビット。Windows 10 は確かめていません）</li>
+        <li>Microsoft Edge WebView2 ランタイム（Windows 11 には最初から入っています）</li>
+        <li>インターネット接続</li>
+      </ul>
+
+      <h2>入れ方と起動</h2>
+      <ol>
+        <li>配布された zip ファイルを、好きなフォルダに展開します。</li>
+        <li>展開したフォルダの <code>pyokomin.exe</code> を起動します。</li>
+        <li>初回だけ、ベータ版の説明とログインの案内が出ます。ログインはあとからでもできます。</li>
+      </ol>
+      <p>インストーラーはありません。アプリ本体は展開したフォルダの中にすべて入っています。</p>
+
+      <h2>データの保存場所</h2>
+      <p>Pyokomin のデータは、すべてこの PC の中に保存されます。チャットの記録を開発者のサーバーへ送ることはありません。</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>何が</th><th>場所</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>チャットの記録・絵文字の画像</td><td><code>ドキュメント\pyokomin.sqlite</code> と <code>ドキュメント\pyokomin_emojis</code></td></tr>
+            <tr><td>設定・ログイン情報（暗号化して保存）</td><td><code>%APPDATA%\com.ymoage\pyokomin</code></td></tr>
+            <tr><td>アプリ内の YouTube 画面のデータ（ログイン状態など）</td><td><code>%LOCALAPPDATA%\flutter_webview_windows\pyokomin</code></td></tr>
+            <tr><td>チャットを読むためのブラウザ</td><td>アプリを展開したフォルダの中の <code>.local-chrome</code></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p><code>%APPDATA%</code> などは、エクスプローラーのアドレス欄にそのまま貼り付けると開けます。</p>
+      <p><strong>ドキュメントフォルダを OneDrive で同期している場合</strong>、チャットの記録も OneDrive に送られます。望まない場合は、OneDrive の設定でドキュメントフォルダの同期（バックアップ）を外してください。</p>
+
+      <h2>アンインストール</h2>
+      <ol>
+        <li>Pyokomin を閉じます。</li>
+        <li>アプリを展開したフォルダを削除します。</li>
+        <li>データも消す場合は、上の表の場所を削除します。
+          <ul>
+            <li><code>ドキュメント\pyokomin.sqlite</code> と <code>ドキュメント\pyokomin_emojis</code></li>
+            <li><code>%APPDATA%\com.ymoage\pyokomin</code></li>
+            <li><code>%LOCALAPPDATA%\flutter_webview_windows\pyokomin</code></li>
+          </ul>
+        </li>
+      </ol>
+      <p>レジストリやスタートメニューには何も登録していません。</p>
+
+      <h2>不具合の報告</h2>
+      <ul>
+        <li><strong>Ctrl+Shift+B</strong> で、スクリーンショット付きの報告を送れます。送る前に、送られる画面と中身を確かめられます。送ると受付番号が出ます。</li>
+        <li>アプリが不具合を見つけたときは、エラーの種類とバージョンだけを自動で開発者に送ります。名前・チャットの本文・チャンネルは送りません。設定でオフにできます。</li>
+      </ul>
+      <p>詳しくは <a href="https://pyokomin.com/privacy.html">プライバシーポリシー</a> をご覧ください。</p>
+
+      <h2>お問い合わせ</h2>
+      <p>yamazaki@ymoage.com（不具合の報告で受付番号が出ていれば、それを添えてください）</p>
+    </main>
+
+    <footer>
+      <a href="https://pyokomin.com/">ホームページに戻る</a>
+    </footer>
+  </div>
+</body>
+</html>
