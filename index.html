@@ -65,6 +65,14 @@
       color: #667eea;
       margin-bottom: 10px;
     }
+    .features-more {
+      text-align: center;
+      margin-top: 24px;
+    }
+    .features-more a {
+      color: #667eea;
+      font-weight: bold;
+    }
     .download {
       background: #667eea;
       color: white;
@@ -88,10 +96,25 @@
     .download-btn:hover {
       transform: scale(1.05);
     }
-    .coming-soon {
-      margin-top: 15px;
-      opacity: 0.9;
+    .download-notes {
+      margin-top: 20px;
       font-size: 0.95rem;
+      opacity: 0.95;
+    }
+    .download-notes a {
+      color: white;
+    }
+    .beta {
+      background: white;
+      padding: 40px 20px;
+    }
+    .beta h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+    .beta p {
+      margin-bottom: 10px;
     }
     footer {
       background: #333;
@@ -125,6 +148,8 @@
       <h1>Pyokomin</h1>
       <p>Live Chat Engine for YouTube</p>
       <p class="lead">YouTube ライブのチャットを、レーンで整理して読むためのアプリです。</p>
+      <p class="lead">いまは β版です。使ってみて、気づいたことを知らせてもらえると助かります。</p>
+      <p class="lead">Pyokomin は無料です。β版のあとの正式版になっても、すべての機能を無料で使えます。</p>
     </div>
   </header>
 
@@ -145,25 +170,38 @@
           <p>終わった配信では、チャットを動画の再生位置に合わせて流します。</p>
         </div>
         <div class="feature-card">
-          <h3>ファイルとリンクの共有</h3>
-          <p>メッセージにファイルやリンクを添えて、同じ配信を見ている Pyokomin の利用者に届けられます。</p>
+          <h3>リンク・画像・ファイルの共有</h3>
+          <p>メッセージにリンクや画像、ファイルを添えて、同じ配信を見ている Pyokomin の利用者に届けられます。</p>
         </div>
         <div class="feature-card">
           <h3>データは手元に</h3>
-          <p>チャットの記録はこの PC に保存します。詳しくは <a href="https://pyokomin.com/guide/">ガイド</a> へ。</p>
+          <p>チャットの記録はこの PC に保存します。詳しくは <a href="https://pyokomin.com/guide/install.html">はじめかた</a> へ。</p>
         </div>
       </div>
+      <p class="features-more"><a href="guide/features.html">できることをくわしく見る</a></p>
     </div>
   </section>
 
   <section class="download">
     <div class="container">
       <h2>ダウンロード</h2>
-      <p style="margin-bottom: 20px;">Windows版をダウンロードできます</p>
-      <a href="https://github.com/ymoage/pyokomin-website/releases" class="download-btn">
-        GitHub Releases
+      <a href="https://github.com/ymoage/pyokomin-releases/releases/latest" class="download-btn">
+        Windows 版をダウンロード（β版）
       </a>
-      <p class="coming-soon">※ 現在準備中です</p>
+      <div class="download-notes">
+        <p>Windows 10・11（64 ビット）で動きます。</p>
+        <p>インストールのしかた・zip の使いかた・Windows の警告については <a href="guide/install.html">はじめかた</a> をご覧ください。</p>
+        <p>ダウンロード・使うことで、<a href="terms.html">利用規約</a> に同意したものとみなします。</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="beta">
+    <div class="container">
+      <h2>β版のお願い</h2>
+      <p>Pyokomin は、いまは試しの版です。不具合があったり、うまく動かなかったりすることがあります。</p>
+      <p>気づいたことがあれば、アプリの上のバーにある虫のボタン（不具合の報告）から送ってください。送る前に、送られる中身を確かめられます。画面の写しは付けないこともできます。</p>
+      <p>送ると受付番号が出ます。メールでお問い合わせいただくときは、受付番号を添えてください。</p>
     </div>
   </section>
 
